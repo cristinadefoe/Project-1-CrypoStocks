@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Cryptocurreny</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/creative.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Firebase link-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#marketCapitalization">Market Capitalization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#news">Latest News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong>Cryptocurrency: Digital Money of the Future</strong>
+          </h1>
+          <hr>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About cryptocurrency-->
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">Should I invest in Cryptocurrency?</h2>
+          <hr class="light my-4">
+          <p class="text-faded mb-4">What are cryptocurrencies?</p>
+          <p class="text-faded mb-4">Cryptocurrency is a digital currency created by code. Free of all governmental oversight, cryptocurrency economy
+            is monitored by peer-to-peer internet protocol.</p>
+          <p class="text-faded mb-4">The best way to determine if investing in cryptocurrency is right for you is by researching and reviewing past
+            historical performance using a graph or table provided below. In addition, we included the latest news articles
+            in cryptocurrency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Capitalization: Graph Bitcoin and Table -->
+  <section class="bg-primary" id="marketCapitalization">
+    <div class="container">
+      <div class="chart">
+        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+        <form>
+          <div class="form-group text-center">
+            <h2 class="section-heading text-white">BITCOIN Data: January, 1st 2017-Present</h2>
+            <hr class="light my-4">
+          </div>
+        </form>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Top 5 Cryptocurrencies by Market Capitalization</h4>
+        </div>
+        <table id="cryptoTable" class="table table-hover table-bordered">
+          <tr>
+            <th>Coin</th>
+            <th>Symbol</th>
+            <th>Price(USD)</th>
+            <th>Market Cap</th>
+            <th>Total Vol.24</th>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Input form for Top 5 Cryptocurrencies by Market Capitalization -->
+      <form role="form">
+        <div class="form-group">
+          <label for="coin-input">Coin</label>
+          <input class="form-control" id="coin-input" type="text">
+        </div>
+        <div class="form-group">
+          <label for="symbol-input">Symbol</label>
+          <input class="form-control" id="symbol-input" type="text">
+        </div>
+        <div class="form-group">
+          <label for="price-input">Price(USD)</label>
+          <input class="form-control" id="price-input" type="text">
+        </div>
+        <div class="form-group">
+          <label for="marketCap-input">Market Cap</label>
+          <input class="form-control" id="marketCap-input" type="text">
+        </div>
+        <div class="form-group">
+          <label for="totalVol-input">Total Vol.24</label>
+          <input class="form-control" id="totalVol-input" type="text">
+        </div>
+        <a class="btn btn-light btn-xl js-scroll-trigger" id="crypto-btn" type="submit">Submit</a>
+      </form>
+    </div>
+
+    </div>
+  </section>
+
+  <section class="bg-dark text-white" id="news">
+    <div id="portfolio"></div>
+    <div class="container text-center">
+      <h2 class="mb-4">Hottest News in Cryptocurrencies</h2>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-auto text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <hr class="my-4">
+        </div>
+      </div>
+
+      <!-- Cristina's contact -->
+      <div class="col-md-5">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="img/cris.jpg" width=100px height=200px class="img-thumbnail" alt="">
+          <div class="card-body">
+            <label for="Name">Cristina Defoe</label>
+            <a href="mailto:cristina.defoe@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.linkedin.com/in/cristina-defoe" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/cristinadefoe" target="_blank" class="fa fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nick's contact -->
+      <div class="col-md-5">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="img/nick.png" width=100px height=200px class="img-thumbnail" alt="">
+          <div class="card-body">
+            <label for="Name">Nikolaos Tsoukas</label>
+            <a href="mailto:nick.tsoukas101@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.linkedin.com/in/nick-tsoukas " target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/Nick-tsoukas" target="_blank" class="fa fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deepika's contact -->
+      <div class="col-md-5">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="img/dips.jpg" width=100px height=200px class="img-thumbnail" alt="">
+          <div class="card-body">
+            <label for="Name">Deepika Asthana</label>
+            <a href="mailto:dasthana.24@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.linkedin.com/in/deepika-asthana-9a256b142 " target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/dasthana24" target="_blank" class="fa fa-github"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rob's contact -->
+      <div class="col-md-5">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" src="img/rob.png" width=100px height=200px class="img-thumbnail" alt="">
+          <div class="card-body">
+            <label for="Name">Rob Thompson</label>
+            <a href="mailto:robert.derrick.thompson@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.linkedin.com/in/robert-thompson-5310146" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/RobertDThompson" target="_blank" class="fa fa-github"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/creative.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Firebase link -->
+  <script src="js/firebase.js"></script>
+
+  <!-- News javascript link -->
+  <script src="js/news.js"></script>
+
+  <!-- API javascript link -->
+  <script src="js/api.js"></script>
+
+  <script src="js/table.js"></script>
+  <script src="js/chartmin.js"></script>
+
+</body>
+
+</html>
